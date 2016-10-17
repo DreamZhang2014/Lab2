@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"     
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="GBK" />
+	<!--  <constant name="struts.devMode" value="true" />-->
+	<package name="actions" extends="struts-default">
+		<action name="search" class="Action.model_search" method ="search_name">
+			<result name="OK">/result.jsp</result>
+			<result name="wrong">/no_result.jsp</result>
+		</action>
+		<action name="the_result" class="Action.model_message" method ="message">
+			<!-- name="success" -->
+			<result name="success">/message.jsp</result>
+			
+		</action>
+		<action name="delete" class="Action.model_delete" method ="delete">
+			<!-- name="success" -->
+			<result name="success">/delete_ok.jsp</result>
+			
+		</action>
+		<action name="back" class="Action.model_search" method ="re_turn">
+			<result name="back">/index.jsp</result>
+		</action>
+		<action name="add_book" class="Action.model_add" method ="add_start">
+			<result name="success">/add.jsp</result>
+		</action>
+		<action name="add" class="Action.model_add" method ="add">
+			<result name="success">/add_ok.jsp</result>
+			<result name="fail">/add_already.jsp</result>
+		</action>
+	</package>
+</struts> 
